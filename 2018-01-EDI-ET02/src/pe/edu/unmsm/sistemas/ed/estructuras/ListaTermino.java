@@ -221,7 +221,7 @@ public class ListaTermino {
         }
         return d;
     }
-
+    //holi
     public ListaTermino multiplicarPolinomio(NodoTermino cabecera2) {
         ListaTermino d = new ListaTermino();
         NodoTermino aux = cabecera;
