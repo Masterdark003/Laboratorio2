@@ -12,7 +12,6 @@ package pe.edu.unmsm.sistemas.ed.estructuras;
 public class ListaTermino {
 
     private NodoTermino cabecera;
-    private NodoTermino cabecera2;
 
     public NodoTermino getCabecera() {
         return cabecera;
@@ -28,15 +27,6 @@ public class ListaTermino {
             cabecera = new NodoTermino(nuevoTermino);
         } else {
             cabecera = new NodoTermino(nuevoTermino, cabecera);
-        }
-    }
-
-    public void agregarSegundoTermino(Termino nuevoTermino) {
-        //Lógica 
-        if (cabecera2 == null) {
-            cabecera2 = new NodoTermino(nuevoTermino);
-        } else {
-            cabecera2 = new NodoTermino(nuevoTermino, cabecera2);
         }
     }
 
@@ -231,6 +221,7 @@ public class ListaTermino {
         int exp;
         double coef;
         while (aux != null) {
+            aux2 = cabecera2;
             while (aux2 != null) {
                 exp = aux.termino.exponente + aux2.termino.exponente;
                 coef = aux.termino.coeficiente * aux2.termino.coeficiente;
@@ -242,43 +233,46 @@ public class ListaTermino {
         }
         return d.simplificar();
     }
-    public ListaTermino simplificar(){
-        ListaTermino d= new ListaTermino ();
-        NodoTermino aux= cabecera;
+
+    public ListaTermino simplificar() {
+        ListaTermino d = new ListaTermino();
+        NodoTermino aux = cabecera;
         NodoTermino aux2;
         int exp;
         double coef;
-        while (aux!=null){
-                aux2= aux.sgte;
-            while (aux2!=null){
-                if(aux.termino.exponente==aux2.termino.exponente){
-                    exp = aux.termino.exponente;
-                    coef = aux.termino.coeficiente + aux2.termino.coeficiente;
-                    Termino nuevoT = new Termino(exp,coef);
-                    d.agregarTermino(nuevoT);
-                    aux2 = this.eliminar(aux2);
-                    
+        while (aux != null) {
+            aux2 = aux.sgte;
+            while (aux2 != null) {
+                if (aux.termino.exponente == aux2.termino.exponente) {
+                    aux.termino.coeficiente += aux2.termino.coeficiente;
+                    eliminar(aux2);
                 }
+                    aux2 = aux2.sgte;
             }
-            aux=aux.sgte;
+
+            exp = aux.termino.exponente;
+            coef = aux.termino.coeficiente;
+            Termino nuevoT = new Termino(exp, coef);
+            d.agregarTermino(nuevoT);
+
+            aux = aux.sgte;
         }
-        
-        
+
         return d;
     }
 
-    public NodoTermino eliminar(NodoTermino entrada) {
-        NodoTermino nodo;
+    public void eliminar(NodoTermino entrada) {
+        //NodoTermino nodo;
         NodoTermino actual, anterior;
         boolean encontrado;
-//inicializa los apuntadores
+        //inicializa los apuntadores
         actual = cabecera;
         anterior = null;
         encontrado = false;
-// búsqueda del nodo y del anterior
+        // búsqueda del nodo y del anterior
         while ((actual != null) && (!encontrado)) {
             encontrado = (actual.equals(entrada));
-//con objetos: actual.dato.equals(entrada)
+            //con objetos: actual.dato.equals(entrada)
             if (!encontrado) {
                 anterior = actual;
                 actual = actual.sgte;
@@ -294,8 +288,7 @@ public class ListaTermino {
                 anterior.sgte = actual.sgte;
             }
         }
-        nodo = actual.sgte;
-        return nodo;
+        // nodo = actual.sgte;
+        //return nodo;
     }
 }
-    

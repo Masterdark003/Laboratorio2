@@ -8,6 +8,7 @@ package pe.edu.unmsm.sistemas.ed.vistas;
 import pe.edu.unmsm.sistemas.ed.estructuras.ListaTermino;
 import pe.edu.unmsm.sistemas.ed.estructuras.Termino;
 import javax.swing.JOptionPane;
+import pe.edu.unmsm.sistemas.ed.estructuras.NodoTermino;
 /**
  *
  * @author desandlope0
@@ -18,7 +19,7 @@ public class PolinomioView extends javax.swing.JFrame {
      private ListaTermino polinomio2 = new ListaTermino();
     private ListaTermino polinomioDerivado= new ListaTermino();
     private ListaTermino polinomioIntegrado= new ListaTermino();
-
+    private NodoTermino cabecera;
     /**
      * Creates new form PolinomioView
      */
@@ -70,20 +71,14 @@ public class PolinomioView extends javax.swing.JFrame {
         btnMultiplicarNumero = new javax.swing.JButton();
         lblPotenciaBinomioNewton = new javax.swing.JLabel();
         txtMultiplicarNumero = new javax.swing.JTextField();
-        pnlIntegracionNumerica = new javax.swing.JPanel();
-        lblLimitesIntegracionNumerica = new javax.swing.JLabel();
-        txtLimiteInferiorIntNum = new javax.swing.JTextField();
-        lblLimiteSuperiorIntNum = new javax.swing.JLabel();
-        txtLimiteSuperiorIntNum = new javax.swing.JTextField();
-        lblLimiteInferior = new javax.swing.JLabel();
-        btnCalcularIntegralNumerica = new javax.swing.JButton();
-        pnlTerminos1 = new javax.swing.JPanel();
+        multiplicarPolinomio = new javax.swing.JPanel();
         btnAgregarTermino1 = new javax.swing.JButton();
         lblExponente1 = new javax.swing.JLabel();
         lblCoeficiente1 = new javax.swing.JLabel();
         txtExponente1 = new javax.swing.JTextField();
         txtCoeficiente1 = new javax.swing.JTextField();
         btnVerPolinomio1 = new javax.swing.JButton();
+        btnMultiplicarPolinomio = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
         scrResultados = new javax.swing.JScrollPane();
         txtResultados = new javax.swing.JTextArea();
@@ -150,7 +145,7 @@ public class PolinomioView extends javax.swing.JFrame {
                     .addGroup(pnlIntegracionLayout.createSequentialGroup()
                         .addComponent(lblNumeroIntegraciones)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtNumeroIntegraciones, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)))
+                        .addComponent(txtNumeroIntegraciones, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addGroup(pnlIntegracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnObtenerIntegralAnalitica, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -444,64 +439,7 @@ public class PolinomioView extends javax.swing.JFrame {
                 .addGap(40, 40, 40))
         );
 
-        pnlIntegracionNumerica.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Integración Numérica de 1/(1+e^-x)", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        pnlIntegracionNumerica.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
-
-        lblLimitesIntegracionNumerica.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        lblLimitesIntegracionNumerica.setText("Límites");
-
-        txtLimiteInferiorIntNum.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-
-        lblLimiteSuperiorIntNum.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        lblLimiteSuperiorIntNum.setText(" b");
-
-        txtLimiteSuperiorIntNum.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-
-        lblLimiteInferior.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        lblLimiteInferior.setText("a");
-
-        btnCalcularIntegralNumerica.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnCalcularIntegralNumerica.setText("Calcular");
-        btnCalcularIntegralNumerica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalcularIntegralNumericaActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pnlIntegracionNumericaLayout = new javax.swing.GroupLayout(pnlIntegracionNumerica);
-        pnlIntegracionNumerica.setLayout(pnlIntegracionNumericaLayout);
-        pnlIntegracionNumericaLayout.setHorizontalGroup(
-            pnlIntegracionNumericaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlIntegracionNumericaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblLimitesIntegracionNumerica)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblLimiteInferior)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtLimiteInferiorIntNum, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblLimiteSuperiorIntNum)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtLimiteSuperiorIntNum, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnCalcularIntegralNumerica, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        pnlIntegracionNumericaLayout.setVerticalGroup(
-            pnlIntegracionNumericaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlIntegracionNumericaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pnlIntegracionNumericaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblLimitesIntegracionNumerica)
-                    .addComponent(txtLimiteInferiorIntNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblLimiteSuperiorIntNum)
-                    .addComponent(txtLimiteSuperiorIntNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblLimiteInferior)
-                    .addComponent(btnCalcularIntegralNumerica))
-                .addContainerGap())
-        );
-
-        pnlTerminos1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Multiplicar por un monomio", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        multiplicarPolinomio.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Multiplicar por un polinomio", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
 
         btnAgregarTermino1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnAgregarTermino1.setText("Agregar");
@@ -539,43 +477,59 @@ public class PolinomioView extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout pnlTerminos1Layout = new javax.swing.GroupLayout(pnlTerminos1);
-        pnlTerminos1.setLayout(pnlTerminos1Layout);
-        pnlTerminos1Layout.setHorizontalGroup(
-            pnlTerminos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTerminos1Layout.createSequentialGroup()
+        btnMultiplicarPolinomio.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        btnMultiplicarPolinomio.setText("Multiplicar");
+        btnMultiplicarPolinomio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMultiplicarPolinomioActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout multiplicarPolinomioLayout = new javax.swing.GroupLayout(multiplicarPolinomio);
+        multiplicarPolinomio.setLayout(multiplicarPolinomioLayout);
+        multiplicarPolinomioLayout.setHorizontalGroup(
+            multiplicarPolinomioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, multiplicarPolinomioLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnlTerminos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlTerminos1Layout.createSequentialGroup()
-                        .addGroup(pnlTerminos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(multiplicarPolinomioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(multiplicarPolinomioLayout.createSequentialGroup()
+                        .addGroup(multiplicarPolinomioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblExponente1)
                             .addComponent(lblCoeficiente1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(pnlTerminos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtExponente1)
-                            .addComponent(txtCoeficiente1)))
-                    .addGroup(pnlTerminos1Layout.createSequentialGroup()
-                        .addComponent(btnVerPolinomio1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnAgregarTermino1)))
-                .addContainerGap())
+                        .addGroup(multiplicarPolinomioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtExponente1, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+                            .addComponent(txtCoeficiente1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAgregarTermino1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(multiplicarPolinomioLayout.createSequentialGroup()
+                        .addGap(0, 38, Short.MAX_VALUE)
+                        .addComponent(btnVerPolinomio1)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnMultiplicarPolinomio)
+                        .addGap(27, 27, 27))))
         );
-        pnlTerminos1Layout.setVerticalGroup(
-            pnlTerminos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlTerminos1Layout.createSequentialGroup()
+        multiplicarPolinomioLayout.setVerticalGroup(
+            multiplicarPolinomioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(multiplicarPolinomioLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(btnAgregarTermino1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnMultiplicarPolinomio)
+                .addContainerGap())
+            .addGroup(multiplicarPolinomioLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pnlTerminos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(multiplicarPolinomioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblExponente1)
                     .addComponent(txtExponente1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pnlTerminos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(multiplicarPolinomioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCoeficiente1)
                     .addComponent(txtCoeficiente1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(7, 7, 7)
-                .addGroup(pnlTerminos1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAgregarTermino1)
-                    .addComponent(btnVerPolinomio1))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnVerPolinomio1)
+                .addGap(8, 8, 8))
         );
 
         javax.swing.GroupLayout pnlMasOperacionesLayout = new javax.swing.GroupLayout(pnlMasOperaciones);
@@ -583,29 +537,24 @@ public class PolinomioView extends javax.swing.JFrame {
         pnlMasOperacionesLayout.setHorizontalGroup(
             pnlMasOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMasOperacionesLayout.createSequentialGroup()
-                .addContainerGap(9, Short.MAX_VALUE)
-                .addGroup(pnlMasOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMasOperacionesLayout.createSequentialGroup()
-                        .addComponent(multiplicarNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(pnlTerminos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(366, 366, 366))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMasOperacionesLayout.createSequentialGroup()
-                        .addComponent(pnlIntegracionNumerica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(119, 119, 119))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(multiplicarNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(multiplicarPolinomio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(311, 311, 311))
         );
         pnlMasOperacionesLayout.setVerticalGroup(
             pnlMasOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMasOperacionesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlMasOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlTerminos1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(multiplicarPolinomio, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(multiplicarNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addComponent(pnlIntegracionNumerica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         multiplicarNumero.getAccessibleContext().setAccessibleName("Multiplicar por un Número");
+        multiplicarPolinomio.getAccessibleContext().setAccessibleName("Multiplicar por un polinomio");
 
         tpOpciones.addTab("Más operaciones", pnlMasOperaciones);
 
@@ -743,22 +692,10 @@ public class PolinomioView extends javax.swing.JFrame {
         ListaTermino polinomioMultiplicado = new ListaTermino();
         polinomioMultiplicado = polinomioMultiplicado.multiplicarNumero(numero);
         //Mostrar resultados
-        txtResultados.setText("El resultado de multiplicar la expresion por " + numero 
+        txtResultados.setText("El resultado de multiplicar " + polinomio.toString() + " por " + numero 
                 + " es " + polinomioMultiplicado.toString() );
         limpiarCampos();
     }//GEN-LAST:event_btnMultiplicarNumeroActionPerformed
-
-    private void btnCalcularIntegralNumericaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularIntegralNumericaActionPerformed
-        //Leer los datos de entrada
-        int limiteInferior = Integer.parseInt(txtLimiteInferiorIntNum.getText());
-        int limiteSuperior = Integer.parseInt(txtLimiteSuperiorIntNum.getText());
-        //Obtener el valor en la integral n-ésima.
-        //double valorIntegralSigmoidal = ListaTermino.integrarSigmoidalNumericamente(limiteInferior, limiteSuperior);
-        //Mostrar resultados
-      //  txtResultados.setText("El resultado de evaluar la integral de 1/(1+e^-x)) en " + "[" + limiteInferior + "," + limiteSuperior + "]"
-      //          + " es " + valorIntegralSigmoidal);
-        limpiarCampos();
-    }//GEN-LAST:event_btnCalcularIntegralNumericaActionPerformed
 
     private void txtExponenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtExponenteActionPerformed
         // TODO add your handling code here:
@@ -777,7 +714,21 @@ public class PolinomioView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtValorEvalDerivadaActionPerformed
 
     private void btnAgregarTermino1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarTermino1ActionPerformed
-        // TODO add your handling code here:
+        int exponente = Integer.parseInt(txtExponente1.getText());
+        double coeficiente = Double.parseDouble(txtCoeficiente1.getText());
+        
+        //Instanciar el elemento a guardar en el nodo
+        Termino nuevoTermino = new Termino(exponente, coeficiente);
+        //Agregar el elemento a la lista
+        polinomio2.agregarTermino(nuevoTermino);
+        //Visualizar el polinomio actual
+        if (cabecera == null) {
+            cabecera = new NodoTermino(nuevoTermino);
+        } else {
+            cabecera = new NodoTermino(nuevoTermino, cabecera);
+        }
+        visualizarPolinomio(polinomio2, "a multiplicar");
+        limpiarCampos();
     }//GEN-LAST:event_btnAgregarTermino1ActionPerformed
 
     private void txtExponente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtExponente1ActionPerformed
@@ -789,12 +740,20 @@ public class PolinomioView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCoeficiente1ActionPerformed
 
     private void btnVerPolinomio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPolinomio1ActionPerformed
-        // TODO add your handling code here:
+        visualizarPolinomio(polinomio2, "a multiplicar");
+        limpiarCampos();
     }//GEN-LAST:event_btnVerPolinomio1ActionPerformed
 
     private void txtMultiplicarNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMultiplicarNumeroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMultiplicarNumeroActionPerformed
+
+    private void btnMultiplicarPolinomioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicarPolinomioActionPerformed
+        ListaTermino polinomioMultiplicado;
+        polinomioMultiplicado = polinomio.multiplicarPolinomio(cabecera);
+        txtResultados.setText("Factor 1: " + polinomio.toString() + "\nFactor 2: " 
+                + polinomio2.toString() + "\nProducto: " + polinomioMultiplicado.toString() );
+    }//GEN-LAST:event_btnMultiplicarPolinomioActionPerformed
 
     private void visualizarPolinomio(ListaTermino polinomio, String caracteristica) {
             
@@ -818,11 +777,11 @@ public class PolinomioView extends javax.swing.JFrame {
     private void limpiarCampos() {
         txtCoeficiente.setText("");
         txtExponente.setText("");
+        txtCoeficiente1.setText("");
+        txtExponente1.setText("");
         //txtGradoPolinomioLegendre.setText("");
         txtLimiteInferiorIntAna.setText("");
         txtLimiteSuperiorIntAna.setText("");
-        txtLimiteInferiorIntNum.setText("");
-        txtLimiteSuperiorIntNum.setText("");
         txtNumeroDerivaciones.setText("");
         txtNumeroEvaluar.setText("");
         txtNumeroIntegraciones.setText("");
@@ -868,11 +827,11 @@ public class PolinomioView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarTermino;
     private javax.swing.JButton btnAgregarTermino1;
-    private javax.swing.JButton btnCalcularIntegralNumerica;
     private javax.swing.JButton btnEvaluarDerivada;
     private javax.swing.JButton btnEvaluarIntegralAnalitica;
     private javax.swing.JButton btnEvaluarPolinomio;
     private javax.swing.JButton btnMultiplicarNumero;
+    private javax.swing.JButton btnMultiplicarPolinomio;
     private javax.swing.JButton btnObtenerDerivada;
     private javax.swing.JButton btnObtenerIntegralAnalitica;
     private javax.swing.JButton btnVerPolinomio;
@@ -883,11 +842,8 @@ public class PolinomioView extends javax.swing.JFrame {
     private javax.swing.JLabel lblExponente;
     private javax.swing.JLabel lblExponente1;
     private javax.swing.JLabel lblIntegracionAnalitica;
-    private javax.swing.JLabel lblLimiteInferior;
     private javax.swing.JLabel lblLimiteInferiorIntAna;
     private javax.swing.JLabel lblLimiteSuperiorIntAna;
-    private javax.swing.JLabel lblLimiteSuperiorIntNum;
-    private javax.swing.JLabel lblLimitesIntegracionNumerica;
     private javax.swing.JLabel lblNumeroDerivaciones;
     private javax.swing.JLabel lblNumeroEvaluar;
     private javax.swing.JLabel lblNumeroIntegraciones;
@@ -895,14 +851,13 @@ public class PolinomioView extends javax.swing.JFrame {
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblTituloResultados;
     private javax.swing.JPanel multiplicarNumero;
+    private javax.swing.JPanel multiplicarPolinomio;
     private javax.swing.JPanel pnlDerivacion;
     private javax.swing.JPanel pnlEvaluacionPolinomio;
     private javax.swing.JPanel pnlIntegracion;
-    private javax.swing.JPanel pnlIntegracionNumerica;
     private javax.swing.JPanel pnlMasOperaciones;
     private javax.swing.JPanel pnlPolinomio;
     private javax.swing.JPanel pnlTerminos;
-    private javax.swing.JPanel pnlTerminos1;
     private javax.swing.JScrollPane scrResultados;
     private javax.swing.JTabbedPane tpOpciones;
     private javax.swing.JTextField txtCoeficiente;
@@ -910,9 +865,7 @@ public class PolinomioView extends javax.swing.JFrame {
     private javax.swing.JTextField txtExponente;
     private javax.swing.JTextField txtExponente1;
     private javax.swing.JTextField txtLimiteInferiorIntAna;
-    private javax.swing.JTextField txtLimiteInferiorIntNum;
     private javax.swing.JTextField txtLimiteSuperiorIntAna;
-    private javax.swing.JTextField txtLimiteSuperiorIntNum;
     private javax.swing.JTextField txtMultiplicarNumero;
     private javax.swing.JTextField txtNumeroDerivaciones;
     private javax.swing.JTextField txtNumeroEvaluar;
