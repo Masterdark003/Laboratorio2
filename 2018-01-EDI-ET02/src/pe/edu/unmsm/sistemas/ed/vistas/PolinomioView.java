@@ -737,7 +737,8 @@ public class PolinomioView extends javax.swing.JFrame {
         ListaTermino polinomioMultiplicado = new ListaTermino();
         polinomioMultiplicado = polinomioMultiplicado.multiplicarNumero(numero);
         //Mostrar resultados
-        txtResultados.setText("El resultado de multiplicar la expresion por " + numero + " es " + polinomioMultiplicado );
+        txtResultados.setText("El resultado de multiplicar la expresion por " + numero 
+                + " es " + polinomioMultiplicado.toString() );
         limpiarCampos();
     }//GEN-LAST:event_btnMultiplicarNumeroActionPerformed
 
