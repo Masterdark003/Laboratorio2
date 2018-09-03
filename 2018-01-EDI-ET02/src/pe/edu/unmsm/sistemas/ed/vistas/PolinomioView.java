@@ -65,10 +65,10 @@ public class PolinomioView extends javax.swing.JFrame {
         lblNumeroEvaluar = new javax.swing.JLabel();
         txtNumeroEvaluar = new javax.swing.JTextField();
         pnlMasOperaciones = new javax.swing.JPanel();
-        pnlBinomioNewton = new javax.swing.JPanel();
-        btnGenerarBinomio = new javax.swing.JButton();
+        multiplicarNumero = new javax.swing.JPanel();
+        btnMultiplicarNumero = new javax.swing.JButton();
         lblPotenciaBinomioNewton = new javax.swing.JLabel();
-        txtPotenciaBinomioNewton = new javax.swing.JTextField();
+        txtMultiplicarNumero = new javax.swing.JTextField();
         pnlIntegracionNumerica = new javax.swing.JPanel();
         lblLimitesIntegracionNumerica = new javax.swing.JLabel();
         txtLimiteInferiorIntNum = new javax.swing.JTextField();
@@ -397,44 +397,44 @@ public class PolinomioView extends javax.swing.JFrame {
 
         tpOpciones.addTab("Operaciones básicas", pnlPolinomio);
 
-        pnlBinomioNewton.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Multiplicar por un numero", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        multiplicarNumero.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Multiplicar por un numero", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
 
-        btnGenerarBinomio.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        btnGenerarBinomio.setText("Multiplicar");
-        btnGenerarBinomio.addActionListener(new java.awt.event.ActionListener() {
+        btnMultiplicarNumero.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        btnMultiplicarNumero.setText("Multiplicar");
+        btnMultiplicarNumero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGenerarBinomioActionPerformed(evt);
+                btnMultiplicarNumeroActionPerformed(evt);
             }
         });
 
         lblPotenciaBinomioNewton.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         lblPotenciaBinomioNewton.setText("numero");
 
-        txtPotenciaBinomioNewton.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        txtMultiplicarNumero.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
 
-        javax.swing.GroupLayout pnlBinomioNewtonLayout = new javax.swing.GroupLayout(pnlBinomioNewton);
-        pnlBinomioNewton.setLayout(pnlBinomioNewtonLayout);
-        pnlBinomioNewtonLayout.setHorizontalGroup(
-            pnlBinomioNewtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBinomioNewtonLayout.createSequentialGroup()
+        javax.swing.GroupLayout multiplicarNumeroLayout = new javax.swing.GroupLayout(multiplicarNumero);
+        multiplicarNumero.setLayout(multiplicarNumeroLayout);
+        multiplicarNumeroLayout.setHorizontalGroup(
+            multiplicarNumeroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, multiplicarNumeroLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pnlBinomioNewtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnGenerarBinomio, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlBinomioNewtonLayout.createSequentialGroup()
+                .addGroup(multiplicarNumeroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnMultiplicarNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(multiplicarNumeroLayout.createSequentialGroup()
                         .addComponent(lblPotenciaBinomioNewton)
                         .addGap(26, 26, 26)
-                        .addComponent(txtPotenciaBinomioNewton, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtMultiplicarNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(14, 14, 14))
         );
-        pnlBinomioNewtonLayout.setVerticalGroup(
-            pnlBinomioNewtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlBinomioNewtonLayout.createSequentialGroup()
+        multiplicarNumeroLayout.setVerticalGroup(
+            multiplicarNumeroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(multiplicarNumeroLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pnlBinomioNewtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(multiplicarNumeroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPotenciaBinomioNewton)
-                    .addComponent(txtPotenciaBinomioNewton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtMultiplicarNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnGenerarBinomio)
+                .addComponent(btnMultiplicarNumero)
                 .addGap(40, 40, 40))
         );
 
@@ -580,7 +580,7 @@ public class PolinomioView extends javax.swing.JFrame {
                 .addContainerGap(9, Short.MAX_VALUE)
                 .addGroup(pnlMasOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMasOperacionesLayout.createSequentialGroup()
-                        .addComponent(pnlBinomioNewton, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(multiplicarNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(pnlTerminos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(366, 366, 366))
@@ -594,12 +594,12 @@ public class PolinomioView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pnlMasOperacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pnlTerminos1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pnlBinomioNewton, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(multiplicarNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(pnlIntegracionNumerica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        pnlBinomioNewton.getAccessibleContext().setAccessibleName("Multiplicar por un Número");
+        multiplicarNumero.getAccessibleContext().setAccessibleName("Multiplicar por un Número");
 
         tpOpciones.addTab("Más operaciones", pnlMasOperaciones);
 
@@ -730,25 +730,26 @@ public class PolinomioView extends javax.swing.JFrame {
         limpiarCampos();
     }//GEN-LAST:event_btnEvaluarIntegralAnaliticaActionPerformed
 
-    private void btnGenerarBinomioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarBinomioActionPerformed
+    private void btnMultiplicarNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicarNumeroActionPerformed
         //Leer los datos de entrada
-        int potenciaBinomioNewton = Integer.parseInt(txtPotenciaBinomioNewton.getText());
-        //Obtener el resultado de la fórmula de Newton.
-        ListaTermino polinomioDesarrolladoBN = ListaTermino.obtenerBinomioNewtonDesarrollado(potenciaBinomioNewton);
+        int numero = Integer.parseInt(txtMultiplicarNumero.getText());
+        //Multiplicar un numero por un polinomio
+        ListaTermino polinomioMultiplicado = new ListaTermino();
+        polinomioMultiplicado = polinomioMultiplicado.multiplicarNumero(numero);
         //Mostrar resultados
-        visualizarPolinomio(polinomioDesarrolladoBN, "desarrollado a partir del binomio del Newton " + "(x - 1)^" + potenciaBinomioNewton);
+        txtResultados.setText("El resultado de multiplicar la expresion por " + numero + " es " + polinomioMultiplicado );
         limpiarCampos();
-    }//GEN-LAST:event_btnGenerarBinomioActionPerformed
+    }//GEN-LAST:event_btnMultiplicarNumeroActionPerformed
 
     private void btnCalcularIntegralNumericaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularIntegralNumericaActionPerformed
         //Leer los datos de entrada
         int limiteInferior = Integer.parseInt(txtLimiteInferiorIntNum.getText());
         int limiteSuperior = Integer.parseInt(txtLimiteSuperiorIntNum.getText());
         //Obtener el valor en la integral n-ésima.
-        double valorIntegralSigmoidal = ListaTermino.integrarSigmoidalNumericamente(limiteInferior, limiteSuperior);
+        //double valorIntegralSigmoidal = ListaTermino.integrarSigmoidalNumericamente(limiteInferior, limiteSuperior);
         //Mostrar resultados
-        txtResultados.setText("El resultado de evaluar la integral de 1/(1+e^-x)) en " + "[" + limiteInferior + "," + limiteSuperior + "]"
-                + " es " + valorIntegralSigmoidal);
+      //  txtResultados.setText("El resultado de evaluar la integral de 1/(1+e^-x)) en " + "[" + limiteInferior + "," + limiteSuperior + "]"
+      //          + " es " + valorIntegralSigmoidal);
         limpiarCampos();
     }//GEN-LAST:event_btnCalcularIntegralNumericaActionPerformed
 
@@ -806,7 +807,7 @@ public class PolinomioView extends javax.swing.JFrame {
     private void limpiarCampos() {
         txtCoeficiente.setText("");
         txtExponente.setText("");
-        txtGradoPolinomioLegendre.setText("");
+        //txtGradoPolinomioLegendre.setText("");
         txtLimiteInferiorIntAna.setText("");
         txtLimiteSuperiorIntAna.setText("");
         txtLimiteInferiorIntNum.setText("");
@@ -814,7 +815,7 @@ public class PolinomioView extends javax.swing.JFrame {
         txtNumeroDerivaciones.setText("");
         txtNumeroEvaluar.setText("");
         txtNumeroIntegraciones.setText("");
-        txtPotenciaBinomioNewton.setText("");
+        txtMultiplicarNumero.setText("");
         txtValorEvalDerivada.setText("");
     }
 
@@ -860,7 +861,7 @@ public class PolinomioView extends javax.swing.JFrame {
     private javax.swing.JButton btnEvaluarDerivada;
     private javax.swing.JButton btnEvaluarIntegralAnalitica;
     private javax.swing.JButton btnEvaluarPolinomio;
-    private javax.swing.JButton btnGenerarBinomio;
+    private javax.swing.JButton btnMultiplicarNumero;
     private javax.swing.JButton btnObtenerDerivada;
     private javax.swing.JButton btnObtenerIntegralAnalitica;
     private javax.swing.JButton btnVerPolinomio;
@@ -882,7 +883,7 @@ public class PolinomioView extends javax.swing.JFrame {
     private javax.swing.JLabel lblPotenciaBinomioNewton;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblTituloResultados;
-    private javax.swing.JPanel pnlBinomioNewton;
+    private javax.swing.JPanel multiplicarNumero;
     private javax.swing.JPanel pnlDerivacion;
     private javax.swing.JPanel pnlEvaluacionPolinomio;
     private javax.swing.JPanel pnlIntegracion;
@@ -901,10 +902,10 @@ public class PolinomioView extends javax.swing.JFrame {
     private javax.swing.JTextField txtLimiteInferiorIntNum;
     private javax.swing.JTextField txtLimiteSuperiorIntAna;
     private javax.swing.JTextField txtLimiteSuperiorIntNum;
+    private javax.swing.JTextField txtMultiplicarNumero;
     private javax.swing.JTextField txtNumeroDerivaciones;
     private javax.swing.JTextField txtNumeroEvaluar;
     private javax.swing.JTextField txtNumeroIntegraciones;
-    private javax.swing.JTextField txtPotenciaBinomioNewton;
     private javax.swing.JTextArea txtResultados;
     private javax.swing.JTextField txtValorEvalDerivada;
     // End of variables declaration//GEN-END:variables

@@ -594,7 +594,7 @@
                       <EmptySpace pref="9" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="pnlBinomioNewton" min="-2" pref="162" max="-2" attributes="0"/>
+                              <Component id="multiplicarNumero" min="-2" pref="162" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="pnlTerminos1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="366" max="-2" attributes="0"/>
@@ -613,7 +613,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="pnlTerminos1" min="-2" pref="126" max="-2" attributes="0"/>
-                          <Component id="pnlBinomioNewton" min="-2" pref="99" max="-2" attributes="0"/>
+                          <Component id="multiplicarNumero" min="-2" pref="99" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="29" max="32767" attributes="0"/>
                       <Component id="pnlIntegracionNumerica" min="-2" max="-2" attributes="0"/>
@@ -622,7 +622,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="pnlBinomioNewton">
+            <Container class="javax.swing.JPanel" name="multiplicarNumero">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -642,11 +642,11 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="btnGenerarBinomio" min="-2" pref="87" max="-2" attributes="0"/>
+                              <Component id="btnMultiplicarNumero" min="-2" pref="87" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Component id="lblPotenciaBinomioNewton" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Component id="txtPotenciaBinomioNewton" min="-2" pref="73" max="-2" attributes="0"/>
+                                  <Component id="txtMultiplicarNumero" min="-2" pref="73" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
@@ -659,17 +659,17 @@
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblPotenciaBinomioNewton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtPotenciaBinomioNewton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtMultiplicarNumero" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btnGenerarBinomio" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnMultiplicarNumero" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="btnGenerarBinomio">
+                <Component class="javax.swing.JButton" name="btnMultiplicarNumero">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="12" style="0"/>
@@ -677,7 +677,7 @@
                     <Property name="text" type="java.lang.String" value="Multiplicar"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGenerarBinomioActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMultiplicarNumeroActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblPotenciaBinomioNewton">
@@ -688,7 +688,7 @@
                     <Property name="text" type="java.lang.String" value="numero"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtPotenciaBinomioNewton">
+                <Component class="javax.swing.JTextField" name="txtMultiplicarNumero">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="12" style="0"/>
