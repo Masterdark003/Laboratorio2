@@ -234,6 +234,22 @@ public class ListaTermino {
         return d.simplificar();
     }
 
+   /* public ListaTermino cocientePolinomio(NodoTermino cabecera2) {
+        ListaTermino d = new ListaTermino();
+        NodoTermino aux = cabecera;
+        NodoTermino aux2 = cabecera2;
+        int exp;
+        double coef;
+        while (aux != null) {
+            exp = aux.termino.exponente - aux2.termino.exponente;
+            coef = aux.termino.coeficiente / aux2.termino.coeficiente;
+            Termino nuevoT = new Termino(exp, coef);
+            d.agregarTermino(nuevoT);
+            aux = aux.sgte;
+        }
+        return d.simplificar();
+    }*/
+
     public ListaTermino simplificar() {
         ListaTermino d = new ListaTermino();
         NodoTermino aux = cabecera;
@@ -247,7 +263,7 @@ public class ListaTermino {
                     aux.termino.coeficiente += aux2.termino.coeficiente;
                     eliminar(aux2);
                 }
-                    aux2 = aux2.sgte;
+                aux2 = aux2.sgte;
             }
 
             exp = aux.termino.exponente;
