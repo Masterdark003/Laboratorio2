@@ -23,14 +23,6 @@ public class NodoTermino {
         this.sgte = sgte;
     }
 
-
-    
-    
-    //Hola Jimmy!!!!
-    //Holi manuel :v
-
-    
-    
     public NodoTermino(Termino termino){
         this.termino = termino;
         sgte = null;
