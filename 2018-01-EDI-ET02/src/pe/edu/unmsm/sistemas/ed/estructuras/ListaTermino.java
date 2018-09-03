@@ -175,7 +175,6 @@ public class ListaTermino {
         return d;
 
     }
-
     public ListaTermino multiplicarNumero(int numero) {
         ListaTermino d = new ListaTermino();
         NodoTermino aux = cabecera;
@@ -184,6 +183,20 @@ public class ListaTermino {
         while (aux != null) {
             exp = aux.termino.exponente;
             coef = aux.termino.coeficiente * numero;
+            Termino nuevoT = new Termino(exp, coef);
+            d.agregarTermino(nuevoT);
+            aux = aux.sgte;
+        }
+        return d;
+    }
+    public ListaTermino multiplicarMonomio (Termino t) {
+        ListaTermino d = new ListaTermino();
+        NodoTermino aux = cabecera;
+        int exp;
+        double coef;
+        while (aux != null) {
+            exp = aux.termino.exponente * t.exponente;
+            coef = aux.termino.coeficiente * t.coeficiente;
             Termino nuevoT = new Termino(exp, coef);
             d.agregarTermino(nuevoT);
             aux = aux.sgte;
