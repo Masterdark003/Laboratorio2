@@ -39,13 +39,15 @@ public class ListaTermino {
             cabecera2 = new NodoTermino(nuevoTermino, cabecera2);
         }
     }
-    public void sumaListas (NodoTermino cabecera2){
+
+    public void sumaListas(NodoTermino cabecera2) {
         NodoTermino aux = cabecera;
-        while(aux!=null){
-            aux = aux.sgte;  
+        while (aux != null) {
+            aux = aux.sgte;
         }
-        aux.sgte=cabecera2;     
+        aux.sgte = cabecera2;
     }
+
     public double evaluar(double numero) {
         //Lógica 
         NodoTermino aux = cabecera;
@@ -230,13 +232,13 @@ public class ListaTermino {
         double coef;
         while (aux != null) {
             while (aux2 != null) {
-                exp = aux.termino.exponente+ aux2.termino.exponente;
-                coef = aux.termino.coeficiente*aux2.termino.coeficiente;
+                exp = aux.termino.exponente + aux2.termino.exponente;
+                coef = aux.termino.coeficiente * aux2.termino.coeficiente;
                 Termino nuevoT = new Termino(exp, coef);
                 d.agregarTermino(nuevoT);
                 aux2 = aux2.sgte;
             }
-            aux=aux.sgte;
+            aux = aux.sgte;
         }
         return d.simplificar();
     }
@@ -263,6 +265,37 @@ public class ListaTermino {
         
         
         return d;
+    }
+
+    public NodoTermino eliminar(NodoTermino entrada) {
+        NodoTermino nodo;
+        NodoTermino actual, anterior;
+        boolean encontrado;
+//inicializa los apuntadores
+        actual = cabecera;
+        anterior = null;
+        encontrado = false;
+// búsqueda del nodo y del anterior
+        while ((actual != null) && (!encontrado)) {
+            encontrado = (actual.equals(entrada));
+//con objetos: actual.dato.equals(entrada)
+            if (!encontrado) {
+                anterior = actual;
+                actual = actual.sgte;
+            }
+        }
+// Enlace del nodo anterior con el siguiente
+        if (actual != null) {
+// Distingue entre que el nodo sea el cabecera,
+// o del resto de la lista
+            if (actual.equals(cabecera)) {
+                cabecera = actual.sgte;
+            } else {
+                anterior.sgte = actual.sgte;
+            }
+        }
+        nodo = actual.sgte;
+        return nodo;
     }
 }
     
