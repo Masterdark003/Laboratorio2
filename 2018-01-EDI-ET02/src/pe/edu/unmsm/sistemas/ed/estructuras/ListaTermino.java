@@ -39,7 +39,13 @@ public class ListaTermino {
             cabecera2 = new NodoTermino(nuevoTermino, cabecera2);
         }
     }
-
+    public void sumaListas (NodoTermino cabecera2){
+        NodoTermino aux = cabecera;
+        while(aux!=null){
+            aux = aux.sgte;  
+        }
+        aux.sgte=cabecera2;     
+    }
     public double evaluar(double numero) {
         //Lógica 
         NodoTermino aux = cabecera;
@@ -216,7 +222,7 @@ public class ListaTermino {
         return d;
     }
 
-    public ListaTermino multiplicarPolinomio(ListaTermino polinomio) {
+    public ListaTermino multiplicarPolinomio(NodoTermino cabecera2) {
         ListaTermino d = new ListaTermino();
         NodoTermino aux = cabecera;
         NodoTermino aux2 = cabecera2;
