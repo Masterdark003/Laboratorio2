@@ -12,6 +12,7 @@ package pe.edu.unmsm.sistemas.ed.estructuras;
 public class ListaTermino {
 
     private NodoTermino cabecera;
+    private NodoTermino cabecera2;
 
     public NodoTermino getCabecera() {
         return cabecera;
@@ -27,6 +28,15 @@ public class ListaTermino {
             cabecera = new NodoTermino(nuevoTermino);
         } else {
             cabecera = new NodoTermino(nuevoTermino, cabecera);
+        }
+    }
+
+    public void agregarSegundoTermino(Termino nuevoTermino) {
+        //Lógica 
+        if (cabecera2 == null) {
+            cabecera2 = new NodoTermino(nuevoTermino);
+        } else {
+            cabecera2 = new NodoTermino(nuevoTermino, cabecera2);
         }
     }
 
@@ -175,6 +185,7 @@ public class ListaTermino {
         return d;
 
     }
+
     public ListaTermino multiplicarNumero(int numero) {
         ListaTermino d = new ListaTermino();
         NodoTermino aux = cabecera;
@@ -189,7 +200,8 @@ public class ListaTermino {
         }
         return d;
     }
-    public ListaTermino multiplicarMonomio (Termino t) {
+
+    public ListaTermino multiplicarMonomio(Termino t) {
         ListaTermino d = new ListaTermino();
         NodoTermino aux = cabecera;
         int exp;
@@ -200,6 +212,22 @@ public class ListaTermino {
             Termino nuevoT = new Termino(exp, coef);
             d.agregarTermino(nuevoT);
             aux = aux.sgte;
+        }
+        return d;
+    }
+
+    public ListaTermino multiplicarPolinomio(ListaTermino polinomio) {
+        ListaTermino d = new ListaTermino();
+        NodoTermino aux = cabecera;
+        NodoTermino aux2 = cabecera2;
+        int exp;
+        double coef;
+        while (aux != null) {
+            while (aux2 != null) {
+                
+                d.agregarTermino(nuevoT);
+                aux = aux.sgte;
+            }
         }
         return d;
     }
