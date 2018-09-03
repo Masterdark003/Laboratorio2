@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 public class PolinomioView extends javax.swing.JFrame {
 
     private ListaTermino polinomio = new ListaTermino();
+     private ListaTermino polinomio2 = new ListaTermino();
     private ListaTermino polinomioDerivado= new ListaTermino();
     private ListaTermino polinomioIntegrado= new ListaTermino();
 
@@ -411,6 +412,11 @@ public class PolinomioView extends javax.swing.JFrame {
         lblPotenciaBinomioNewton.setText("numero");
 
         txtMultiplicarNumero.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        txtMultiplicarNumero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMultiplicarNumeroActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout multiplicarNumeroLayout = new javax.swing.GroupLayout(multiplicarNumero);
         multiplicarNumero.setLayout(multiplicarNumeroLayout);
@@ -785,6 +791,10 @@ public class PolinomioView extends javax.swing.JFrame {
     private void btnVerPolinomio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPolinomio1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnVerPolinomio1ActionPerformed
+
+    private void txtMultiplicarNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMultiplicarNumeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMultiplicarNumeroActionPerformed
 
     private void visualizarPolinomio(ListaTermino polinomio, String caracteristica) {
             

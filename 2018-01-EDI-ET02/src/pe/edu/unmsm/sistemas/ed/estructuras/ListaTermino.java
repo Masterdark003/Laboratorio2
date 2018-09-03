@@ -213,7 +213,7 @@ public class ListaTermino {
         int exp;
         double coef;
         while (aux != null) {
-            exp = aux.termino.exponente * t.exponente;
+            exp = aux.termino.exponente + t.exponente;
             coef = aux.termino.coeficiente * t.coeficiente;
             Termino nuevoT = new Termino(exp, coef);
             d.agregarTermino(nuevoT);
@@ -230,10 +230,13 @@ public class ListaTermino {
         double coef;
         while (aux != null) {
             while (aux2 != null) {
-                
+                exp = aux.termino.exponente+ aux2.termino.exponente;
+                coef = aux.termino.coeficiente*aux2.termino.coeficiente;
+                Termino nuevoT = new Termino(exp, coef);
                 d.agregarTermino(nuevoT);
-                aux = aux.sgte;
+                aux2 = aux2.sgte;
             }
+            aux=aux.sgte;
         }
         return d;
     }
