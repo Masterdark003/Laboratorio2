@@ -243,7 +243,8 @@ public class ListaTermino {
         return d;
     }
 
-    public void eliminar(NodoTermino entrada) {
+    public NodoTermino eliminar(NodoTermino entrada) {
+        NodoTermino nodo;
         NodoTermino actual, anterior;
         boolean encontrado;
 //inicializa los apuntadores
@@ -252,7 +253,7 @@ public class ListaTermino {
         encontrado = false;
 // búsqueda del nodo y del anterior
         while ((actual != null) && (!encontrado)) {
-            encontrado = (actual == entrada);
+            encontrado = (actual.equals(entrada));
 //con objetos: actual.dato.equals(entrada)
             if (!encontrado) {
                 anterior = actual;
@@ -263,11 +264,13 @@ public class ListaTermino {
         if (actual != null) {
 // Distingue entre que el nodo sea el cabecera,
 // o del resto de la lista
-            if (actual == cabecera) {
+            if (actual.equals(cabecera)) {
                 cabecera = actual.sgte;
             } else {
                 anterior.sgte = actual.sgte;
             }
         }
+        nodo = actual.sgte;
+        return nodo;
     }
 }
