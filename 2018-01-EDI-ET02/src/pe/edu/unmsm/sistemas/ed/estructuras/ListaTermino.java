@@ -238,6 +238,31 @@ public class ListaTermino {
             }
             aux=aux.sgte;
         }
+        return d.simplificar();
+    }
+    public ListaTermino simplificar(){
+        ListaTermino d= new ListaTermino ();
+        NodoTermino aux= cabecera;
+        NodoTermino aux2;
+        int exp;
+        double coef;
+        while (aux!=null){
+                aux2= aux.sgte;
+            while (aux2!=null){
+                if(aux.termino.exponente==aux2.termino.exponente){
+                    exp = aux.termino.exponente;
+                    coef = aux.termino.coeficiente + aux2.termino.coeficiente;
+                    Termino nuevoT = new Termino(exp,coef);
+                    d.agregarTermino(nuevoT);
+                    aux2 = this.eliminar(aux2);
+                    
+                }
+            }
+            aux=aux.sgte;
+        }
+        
+        
         return d;
     }
 }
+    
